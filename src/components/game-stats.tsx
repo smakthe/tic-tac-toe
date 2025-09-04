@@ -1,10 +1,12 @@
 import { component$ } from '@builder.io/qwik';
+import type { QRL } from '@builder.io/qwik';
 
 interface GameStatsProps {
   wins: { x: number; o: number; draws: number };
+  onResetStats: QRL<() => void>;
 }
 
-export const GameStats = component$<GameStatsProps>(({ wins }) => {
+export const GameStats = component$<GameStatsProps>(({ wins, onResetStats }) => {
   const totalGames = wins.x + wins.o + wins.draws;
   const winPercentageX = totalGames > 0 ? Math.round((wins.x / totalGames) * 100) : 0;
   const winPercentageO = totalGames > 0 ? Math.round((wins.o / totalGames) * 100) : 0;
@@ -49,6 +51,10 @@ export const GameStats = component$<GameStatsProps>(({ wins }) => {
         <span class="total-label">Total Games:</span>
         <span class="total-number">{totalGames}</span>
       </div>
+
+      <button class="reset-stats-button" onClick$={onResetStats}>
+        🔄 Reset Stats
+      </button>
     </div>
   );
 });

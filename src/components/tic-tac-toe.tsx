@@ -40,12 +40,6 @@ export const TicTacToe = component$(() => {
         gameState.gameStatus = newState.gameStatus;
         gameState.moveHistory = newState.moveHistory;
         gameState.depth = newState.depth;
-        
-        // Check for winning line
-        if (newState.gameStatus !== 0) {
-          updateWinningLine();
-          updateWinStats(newState.gameStatus);
-        }
       } catch (error) {
         console.error('AI move error:', error);
       } finally {
@@ -65,11 +59,7 @@ export const TicTacToe = component$(() => {
       gameState.moveHistory = newState.moveHistory;
       gameState.depth = newState.depth;
       
-      // Check for winning line
-      if (newState.gameStatus !== 0) {
-        updateWinningLine();
-        updateWinStats(newState.gameStatus);
-      }
+
     } catch (error) {
       console.error('Move error:', error);
     }
@@ -143,6 +133,9 @@ export const TicTacToe = component$(() => {
 
   const handleModeChange = $((mode: GameMode) => {
     gameMode.value = mode;
+    wins.x = 0;
+    wins.o = 0;
+    wins.draws = 0;
     handleNewGame();
   });
 
@@ -150,6 +143,15 @@ export const TicTacToe = component$(() => {
     difficulty.value = diff;
     if (gameMode.value === 'ai') {
       handleNewGame();
+    }
+  });
+
+  // Watch for game status changes to update stats
+  useTask$(({ track }) => {
+    const status = track(() => gameState.gameStatus);
+    if (status !== 0) {
+      updateWinningLine();
+      updateWinStats(status);
     }
   });
 
@@ -183,6 +185,11 @@ export const TicTacToe = component$(() => {
         <div class="game-sidebar">
           <GameStats
             wins={wins}
+            onResetStats={$(() => {
+              wins.x = 0;
+              wins.o = 0;
+              wins.draws = 0;
+            })}
           />
         </div>
       </div>
