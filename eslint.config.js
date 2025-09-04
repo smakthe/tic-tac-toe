@@ -44,6 +44,7 @@ const ignores = [
   "**/yarn.lock",
   "**/server",
   "eslint.config.js",
+  "**/adapters/**",
 ];
 
 export default tseslint.config(
@@ -68,6 +69,7 @@ export default tseslint.config(
   {
     rules: {
       "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-empty-object-type": "off",
     },
   },
 );
