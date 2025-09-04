@@ -138,10 +138,28 @@ body {
   border-color: #667eea;
 }
 
-.new-game-button {
-  padding: 12px 30px;
+.difficulty-button.difficulty-easy {
   background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
   color: white;
+  border-color: #48bb78;
+}
+
+.difficulty-button.difficulty-medium {
+  background: linear-gradient(135deg, #ed8936 0%, #dd6b20 100%);
+  color: white;
+  border-color: #ed8936;
+}
+
+.difficulty-button.difficulty-hard {
+  background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+  color: white;
+  border-color: #e53e3e;
+}
+
+.new-game-button {
+  padding: 12px 30px;
+  background: linear-gradient(135deg, #ffbf00 0%, #efbf04 100%);
+  color: rgb(86, 23, 23);
   border: none;
   border-radius: 25px;
   font-weight: 600;

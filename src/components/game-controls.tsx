@@ -22,8 +22,12 @@ export const GameControls = component$<GameControlsProps>(({
   difficulty = 'hard'
 }) => {
   const getStatusMessage = () => {
-    if (gameStatus === 1) return '🎉 Player X Wins!';
-    if (gameStatus === 2) return '🎉 Player O Wins!';
+    if (gameStatus === 1) {
+      return gameMode === 'ai' ? '🎉 You Win!' : '🎉 Player X Wins!';
+    }
+    if (gameStatus === 2) {
+      return gameMode === 'ai' ? '🎉 AI Wins!' : '🎉 Player O Wins!';
+    }
     if (gameStatus === 3) return '🤝 It\'s a Draw!';
     
     if (gameMode === 'ai') {
@@ -63,19 +67,19 @@ export const GameControls = component$<GameControlsProps>(({
             <h3>AI Difficulty</h3>
             <div class="button-group">
               <button
-                class={`difficulty-button ${difficulty === 'easy' ? 'active' : ''}`}
+                class={`difficulty-button ${difficulty === 'easy' ? 'active difficulty-easy' : ''}`}
                 onClick$={() => onDifficultyChange?.('easy')}
               >
                 😊 Easy
               </button>
               <button
-                class={`difficulty-button ${difficulty === 'medium' ? 'active' : ''}`}
+                class={`difficulty-button ${difficulty === 'medium' ? 'active difficulty-medium' : ''}`}
                 onClick$={() => onDifficultyChange?.('medium')}
               >
                 😐 Medium
               </button>
               <button
-                class={`difficulty-button ${difficulty === 'hard' ? 'active' : ''}`}
+                class={`difficulty-button ${difficulty === 'hard' ? 'active difficulty-hard' : ''}`}
                 onClick$={() => onDifficultyChange?.('hard')}
               >
                 😤 Hard
