@@ -28,7 +28,7 @@ export const TicTacToe = component$(() => {
       isAiThinking.value = true;
       
       // Add a small delay to show AI thinking
-      await new Promise(resolve => setTimeout(resolve, 500));
+      await new Promise(resolve => setTimeout(resolve, 1000));
       
       try {
         const aiMove = getBestMove(gameState, difficulty.value);

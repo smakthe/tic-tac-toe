@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #68b3ec 0%, #42919b 100%);
   min-height: 100vh;
   color: #333;
   line-height: 1.6;
@@ -133,35 +133,35 @@ body {
 
 .mode-button.active,
 .difficulty-button.active {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border-color: #667eea;
+  background: linear-gradient(135deg, #555 0%, #999 100%);
+  color: rgb(255, 255, 255);
+  border-color: #777;
 }
 
 .difficulty-button.difficulty-easy {
-  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+  background: linear-gradient(135deg, #b8ffb8 0%, #008000 100%);
   color: white;
-  border-color: #48bb78;
+  border-color: #c9ffc9;
 }
 
 .difficulty-button.difficulty-medium {
-  background: linear-gradient(135deg, #ed8936 0%, #dd6b20 100%);
+  background: linear-gradient(135deg, #ffd48a 0%, #ffac1c 100%);
   color: white;
-  border-color: #ed8936;
+  border-color: #ffe59b;
 }
 
 .difficulty-button.difficulty-hard {
-  background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+  background: linear-gradient(135deg, #df6b6b 0%, #c60a0a 100%);
   color: white;
-  border-color: #e53e3e;
+  border-color: #ef7c7c;
 }
 
 .new-game-button {
   padding: 12px 30px;
-  background: linear-gradient(135deg, #ffbf00 0%, #efbf04 100%);
-  color: rgb(86, 23, 23);
-  border: none;
+  background: linear-gradient(135deg, #daa60d 0%, #e6b90685 100%);
+  color: rgb(255, 255, 255);
   border-radius: 25px;
+  border-color: #000000;
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
@@ -171,15 +171,15 @@ body {
 
 .new-game-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(72, 187, 120, 0.3);
+  box-shadow: 0 8px 20px rgba(234, 204, 4, 0.833);
 }
 
 .reset-stats-button {
   padding: 10px 20px;
-  background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+  background: linear-gradient(135deg, #eca6a6 0%, #890202 100%);
   color: white;
-  border: none;
   border-radius: 20px;
+  border-color: #000000;
   font-weight: 600;
   font-size: 0.9rem;
   cursor: pointer;
@@ -247,8 +247,8 @@ body {
 }
 
 .cell-winning {
-  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
-  border-color: #f6e05e;
+  background: linear-gradient(135deg, #15ff00 0%, #06f802a3 100%);
+  border-color: #b3f0b9;
   animation: pulse 1s infinite;
 }
 

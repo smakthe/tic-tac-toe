@@ -31,7 +31,7 @@ export const GameControls = component$<GameControlsProps>(({
     if (gameStatus === 3) return '🤝 It\'s a Draw!';
     
     if (gameMode === 'ai') {
-      return currentPlayer === 1 ? '🎮 Your Turn (X)' : '🤖 AI Thinking...';
+      return currentPlayer === 1 ? '❌ Your Turn (X)' : '⭕ AI Thinking...';
     } else {
       return currentPlayer === 1 ? '❌ Player X\'s Turn' : '⭕ Player O\'s Turn';
     }
@@ -51,13 +51,13 @@ export const GameControls = component$<GameControlsProps>(({
               class={`mode-button ${gameMode === 'human' ? 'active' : ''}`}
               onClick$={() => onModeChange('human')}
             >
-              👥 vs Human
+              👤 vs 👤
             </button>
             <button
               class={`mode-button ${gameMode === 'ai' ? 'active' : ''}`}
               onClick$={() => onModeChange('ai')}
             >
-              🤖 vs AI
+              👤 vs 🤖
             </button>
           </div>
         </div>
